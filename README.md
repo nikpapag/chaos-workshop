@@ -52,11 +52,77 @@
 
 Observe the auto generated experiments and run the **web-backend experiment**
 
+
+
+
 ---------------
 
 **Create Experiments manually**
 
-1. From the left hand menu, go to **Chaos Experiments**
+This time we will create a network corruption experiment
+
+1. From the left hand menu, go to **Chaos Testing**
+2. Select **+New Experiment**
+
+| Input                        | Value|  
+| ---------------------------- | ------ |
+| Name                         |network-corruption|
+
+3. Select **Harness Infra**
+
+  ![Screenshot 2024-11-28 at 14 24 21](https://github.com/user-attachments/assets/c47834a3-fe88-44ed-be7e-7cee97bcb303)
+
+  - Click on **"Select a chaos Infrastructure"**
+
+ 
+4. On the popup window select the available options
+
+| Input                        | Value|  
+| ---------------------------- | ------ |
+| Select Environment|prod|
+| Select Infrastructure|k8s|
+
+5. Click on next to navigate to the experiment builder
+6. Click on **Add Fault**
+7. From the list of available faults select **Pod Network Corruption**
+8. From the navigation bar select **Target Application**
+
+| Input                        | Value | Notes |
+| ---------------------------- | ------ | -------|
+| Target Workload Kind|deployment||
+| Target Workload Namespace ||**Select the namespace available from the dropdown**|
+| Target Workload Names | Pick the backend deployment name|We will change that later |
+|Target Workload Labels | leave empty||
+
+
+9. From the navigation bar select **Tune Fault**
+
+| Input       | Value |
+| ----------- | ----- |
+| Total Chaos Duration |150|
+| Network Packet Corruption Percentage |100|
+10. Click on **Apply Changes** and then **Save**
+11. Run the experiment and observe the logs. 
+12. While the experiment is running navigate to the application's endpoint 
+
+| project                | domain        | suffix |
+| ---------------------- | ------------- | ------ |
+| http\://\<project\_id>|.cie-bootcamp|.co.uk|
+
+<img width="1415" height="205" alt="image" src="https://github.com/user-attachments/assets/cb85c608-bfbb-4ec5-b179-c6ebd6ff394c" />
+
+
+**Validate the health automatically**
+
+1. From the left hand menu, go to **Project Settings**
+
+
+
+---------------
+
+**Create Experiments manually**
+
+1. From the left hand menu, go to **Chaos Testing**
 2. Select **+New Experiment**
 
 | Input                        | Value|  
@@ -100,6 +166,7 @@ Observe the auto generated experiments and run the **web-backend experiment**
 | Pod affected percentage|100|
 
 10. Click on **Apply Changes** and then **Save**
+
 
 **Change target service to canary using YAML**
 
