@@ -245,9 +245,10 @@ Observe the **Resilience Score** generated in comparisson to the previous execut
 
 7. Click on Apply Changes
 
-8. Click **Save** and then click **Run** to execute the pipeline with the following inputs. As a bonus, save your inputs as an Input Set before executing (see below)
+8. Click **Save** and then click **Run** to execute the pipeline with the following inputs.
 
 | Input       | Value | Notes       |
 | ----------- | ----- | ----------- |
 | Branch Name |main| Leave as is |
 
+9. After 10 minutes review what happened with the execution 
