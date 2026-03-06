@@ -133,7 +133,7 @@ This time we will create a network corruption experiment
 | ---------------------- | ------------- | ------ |
 | Timeout | 20s ||
 | Interval | 2s | | 
-| Attempt | 10 | | 
+| Attempt | 5 | | 
 | Initial Delay | 5s ||
 
 Now that we have our probe navigate to **Chaos Testing**
@@ -145,7 +145,7 @@ Select **+ Add a parallel node -> Add a probe**
 <img width="519" height="354" alt="image" src="https://github.com/user-attachments/assets/519fc841-bbf1-4480-a01c-4583eab0b208" />
 
 Save and rerun the experiment 
-Observe the **Resilience Score** generated in comparisson to the previous execution
+Observe the **logs** of the probe **Resilience Score** generated in comparisson to the previous execution
 
 
 
