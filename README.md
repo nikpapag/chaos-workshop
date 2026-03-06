@@ -103,7 +103,8 @@ This time we will create a network corruption experiment
 | Network Packet Corruption Percentage |100|
 10. Click on **Apply Changes** and then **Save**
 11. Run the experiment and observe the logs. 
-12. While the experiment is running navigate to the application's endpoint 
+12. While the experiment is running navigate to the application's endpoint (see image below)
+13. Observe the network errors
 
 | project                | domain        | suffix |
 | ---------------------- | ------------- | ------ |
@@ -115,6 +116,36 @@ This time we will create a network corruption experiment
 **Validate the health automatically**
 
 1. From the left hand menu, go to **Project Settings**
+2. Select **Chaos Probles**
+3. Create a new probe by clicking **+ New Probe**
+4. Select the HTTP probe
+   
+| Field                | Value        | Notes |
+| ---------------------- | ------------- | ------ |
+| http\://\<project\_id>.cie-bootcamp.co.uk |||
+| Criteria | == | | 
+| Response Code | 200 | | 
+
+5. Move to the next tab **Configure Properties**
+
+
+| Field                | Value        | Notes |
+| ---------------------- | ------------- | ------ |
+| Timeout | 20s ||
+| Interval | 2s | | 
+| Attempt | 10 | | 
+| Initial Delay | 5s ||
+
+Now that we have our probe navigate to **Chaos Testing**
+Drill down to the **network-latency** experiment
+
+Hovering over the network fault we can add our newly created probe 
+Select **+ Add a parallel node -> Add a probe**
+
+<img width="519" height="354" alt="image" src="https://github.com/user-attachments/assets/519fc841-bbf1-4480-a01c-4583eab0b208" />
+
+Save and rerun the experiment 
+Observe the **Resilience Score** generated in comparisson to the previous execution
 
 
 
