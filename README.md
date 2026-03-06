@@ -15,6 +15,7 @@
 
 1. From the module selection menu select **resilience testing**
 
+<img width="733" height="402" alt="Screenshot 2026-03-06 at 08 14 35" src="https://github.com/user-attachments/assets/3d6bba05-4189-4c14-893b-cb75e270029d" />
 
 
 4. From the left hand menu, go to **Project Settings**
